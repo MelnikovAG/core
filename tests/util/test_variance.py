@@ -1,4 +1,5 @@
 """Test variance method."""
+
 from datetime import datetime, timedelta
 
 import pytest
@@ -33,7 +34,7 @@ from homeassistant.util.variance import ignore_variance
         ),
     ],
 )
-def test_ignore_variance(value_1, value_2, variance, expected):
+def test_ignore_variance(value_1, value_2, variance, expected) -> None:
     """Test ignore_variance."""
     with_ignore = ignore_variance(lambda x: x, variance)
     assert with_ignore(value_1) == value_1
